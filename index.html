@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Text Encript</title>
+</head>
+<body>
+  <main class="main__container">
+    <div class="container">
+      <section class="container__primary">
+        <div class="container__primary__logo">
+          <a href="index.html">
+            <img src="./assets/Logo.png" alt="Logo Alura">
+          </a>
+        </div>
+        <div class="container__primary__text">
+          <textarea name="text-encript" id="text-encript" placeholder="Ingrese su texto aqui"></textarea>
+        </div>
+        <div class="container__primary__placeholder">
+          <span>❕Solo letras minusculas y sin acentos</span>
+        </div>
+        <div class="container__primary__button">
+          <a class="btn__encript" onclick="TextEncript()">Encriptar</a>
+          <a class="btn__encript" onclick="TextDesencript()">Desencriptar</a>
+        </div>
+      </section>
+      <section class="container__secondary">
+        <div class="container__secondary__Copytext">
+          <p name="result-text" id="result-text"></p>
+          <div class="flex__button">
+            <button href="" class="btn__copiar" id="btn__copiar" onclick="CopyText()">Copiar</button>
+          </div>
+        </div>
+        <div class="container__secondary__ImageText" >
+          <img src="./assets/Muñeco.png" alt="">
+          <h2>Ningún mensaje fue encontrado</h2>
+          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="footer__paragraft">Desarrollado con ❤️ por César Limachi Flores </p>
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>
+
+
