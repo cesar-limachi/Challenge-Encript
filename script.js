@@ -22,12 +22,14 @@ const TextKeyReverse = {
   ufat: "u",
 };
 
-let textFinaly = "";
+
 let textFinalyDes = "";
+let textFinaly = "";
 
 /* FUNCIONES */
 const TextEncript = () => {
-  let UserText = document.getElementById("text-encript").value;
+  let TextElement = document.getElementById("text-encript");
+  let UserText = TextElement.value
   for (let i = 0; i < UserText.length; i++) {
     let result = UserText[i];
     if (TextKey[result]) {
@@ -36,14 +38,16 @@ const TextEncript = () => {
       textFinaly += result;
     }
   }
-  document.getElementById("result-text").innerHTML = textFinaly;
+  document.getElementById("result-text").textContent = textFinaly;
+  TextElement.value = ""
   ViewImage(false);
   ViewResult(true);
 };
 
 const TextDesencript = () => {
-  let UserTextDes = document.getElementById("text-encript").value;
-  textFinalyDes = UserTextDes;
+
+  let UserTextDes = document.getElementById("text-encript")
+  textFinalyDes = UserTextDes.value;
   const values = Object.keys(TextKeyReverse).sort(
     (a, b) => b.length - a.length
   );
@@ -54,13 +58,14 @@ const TextDesencript = () => {
       TextKeyReverse[resultValue]
     );
   }
-  document.getElementById("result-text").innerHTML = textFinalyDes;
+  document.getElementById("result-text").textContent = textFinalyDes;
+  UserTextDes.value = "";
   ViewImage(false);
   ViewResult(true);
 };
 
 const CleanTextArea = () => {
-  document.getElementById("result-text").innerHTML = "";
+  document.getElementById("result-text").textContent = "";
   textFinaly = "";
   ViewImage(true);
   ViewResult(false);
@@ -71,6 +76,10 @@ const CopyText = async () => {
   const CopyTextFinaly = textFinaly || textFinalyDes
   try {
     await navigator.clipboard.writeText(CopyTextFinaly);
+   /*  const textElement = document.getElementById("text-encript");
+    if (textElement) {
+      textElement.textContent = "";
+    } */
   } catch (err) {
     console.log("Error al copiar", err);
   }
