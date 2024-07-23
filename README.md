@@ -23,5 +23,5 @@ Este proyecto es un encriptador de texto que toma una cadena de caracteres ingre
    git clone https://github.com/cesar-limachi/Challenge-Encript.git
 2. Navega hasta el directorio del proyecto:
    ```bash
-    cd ruta-repositrio
+    cd ruta-repositorio
 3. Abre el archivo `index.html` en tu navegador favorito.
